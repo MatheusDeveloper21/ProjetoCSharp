@@ -1,0 +1,55 @@
+﻿@model BeepSystems.Models.Produto
+
+@{
+    ViewData["Title"] = "AtualizarProduto";
+}
+
+<h2>Atualizar Produto</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AtualizarProduto">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProdutoId" />
+            <div class="form-group">
+                <label asp-for="CodigoDeBarra" class="control-label"></label>
+                <input asp-for="CodigoDeBarra" class="form-control" />
+                <span asp-validation-for="CodigoDeBarra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantidade" class="control-label"></label>
+                <input asp-for="Quantidade" class="form-control" />
+                <span asp-validation-for="Quantidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecoVenda" class="control-label"></label>
+                <input asp-for="PrecoVenda" class="form-control" />
+                <span asp-validation-for="PrecoVenda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecoCompra" class="control-label"></label>
+                <input asp-for="PrecoCompra" class="form-control" />
+                <span asp-validation-for="PrecoCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+                <input asp-for="Categoria" class="form-control" />
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a class="btn btn-primary" asp-action="Produto">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
